@@ -530,6 +530,300 @@ export default function CurrentNews() {
       );
       break;
 
+    case "14.04.2024":
+      render = (
+        <div className={styles.news_main_wrapper}>
+          <div className={styles.item_news_wrapper}>
+            <Carousel
+              className={styles.carousel}
+              swipeable={false}
+              draggable={false}
+              showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+              autoPlaySpeed={5000}
+              autoPlay={false}
+              // keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              // deviceType={this.props.deviceType}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {select[11].img.map((item) => (
+                <div className={styles.img_wrapper}>
+                  <img
+                    key={item.id}
+                    alt=""
+                    className={styles.news_img}
+                    src={item}
+                  />
+                </div>
+              ))}
+            </Carousel>
+            <h5 className={styles.news_date}>{select[11].date}</h5>
+            <p className={styles.news_text}>{select[11].text}</p>
+          </div>
+        </div>
+      );
+      break;
+
+    case "15.04.2024":
+      render = (
+        <div className={styles.news_main_wrapper}>
+          <div className={styles.item_news_wrapper}>
+            <Carousel
+              className={styles.carousel}
+              swipeable={false}
+              draggable={false}
+              showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+              autoPlaySpeed={5000}
+              autoPlay={false}
+              // keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              // deviceType={this.props.deviceType}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {select[12].img.map((item) => (
+                <div className={styles.img_wrapper}>
+                  <img
+                    key={item.id}
+                    alt=""
+                    className={styles.news_img}
+                    src={item}
+                  />
+                </div>
+              ))}
+            </Carousel>
+            <h5 className={styles.news_date}>{select[12].date}</h5>
+            <p className={styles.news_text}>{select[12].text}</p>
+          </div>
+        </div>
+      );
+      break;
+
+    case "17.04.2024":
+      render = (
+        <div className={styles.news_main_wrapper}>
+          <div className={styles.item_news_wrapper}>
+            <Carousel
+              className={styles.carousel}
+              swipeable={false}
+              draggable={false}
+              showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+              autoPlaySpeed={5000}
+              autoPlay={false}
+              // keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              // deviceType={this.props.deviceType}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {select[13].img.map((item) => (
+                <div className={styles.img_wrapper}>
+                  <img
+                    key={item.id}
+                    alt=""
+                    className={styles.news_img}
+                    src={item}
+                  />
+                </div>
+              ))}
+            </Carousel>
+            <h5 className={styles.news_date}>{select[13].date}</h5>
+            <p className={styles.news_text}>{select[13].text}</p>
+          </div>
+        </div>
+      );
+      break;
+
+    case "17.04.2024.":
+      render = (
+        <div className={styles.news_main_wrapper}>
+          <div className={styles.item_news_wrapper}>
+            <Carousel
+              className={styles.carousel}
+              swipeable={false}
+              draggable={false}
+              showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+              autoPlaySpeed={5000}
+              autoPlay={false}
+              // keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              // deviceType={this.props.deviceType}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {select[14].img.map((item) => (
+                <div className={styles.img_wrapper}>
+                  <img
+                    key={item.id}
+                    alt=""
+                    className={styles.news_img}
+                    src={item}
+                  />
+                </div>
+              ))}
+            </Carousel>
+            <h5 className={styles.news_date}>{select[14].date}</h5>
+            <p className={styles.news_text}>{select[14].text}</p>
+          </div>
+        </div>
+      );
+      break;
+
+    case "18.04.2024.":
+      render = (
+        <div className={styles.news_main_wrapper}>
+          <div className={styles.item_news_wrapper}>
+            <Carousel
+              className={styles.carousel}
+              swipeable={false}
+              draggable={false}
+              showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+              autoPlaySpeed={5000}
+              autoPlay={false}
+              // keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              // deviceType={this.props.deviceType}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {select[15].img.map((item) => (
+                <div className={styles.img_wrapper}>
+                  <img
+                    key={item.id}
+                    alt=""
+                    className={styles.news_img}
+                    src={item}
+                  />
+                </div>
+              ))}
+            </Carousel>
+            <h5 className={styles.news_date}>{select[15].date}</h5>
+            <p className={styles.news_text}>{select[15].text}</p>
+          </div>
+        </div>
+      );
+      break;
+
+    case "22.04.2024.":
+      render = (
+        <div className={styles.news_main_wrapper}>
+          <div className={styles.item_news_wrapper}>
+            <Carousel
+              className={styles.carousel}
+              swipeable={false}
+              draggable={false}
+              showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+              autoPlaySpeed={5000}
+              autoPlay={false}
+              // keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              // deviceType={this.props.deviceType}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {select[16].img.map((item) => (
+                <div className={styles.img_wrapper}>
+                  <img
+                    key={item.id}
+                    alt=""
+                    className={styles.news_img}
+                    src={item}
+                  />
+                </div>
+              ))}
+            </Carousel>
+            <h5 className={styles.news_date}>{select[16].date}</h5>
+            <p className={styles.news_text}>{select[16].text}</p>
+          </div>
+        </div>
+      );
+      break;
+
+    case "28.04.2024.":
+      render = (
+        <div className={styles.news_main_wrapper}>
+          <div className={styles.item_news_wrapper}>
+            <Carousel
+              className={styles.carousel}
+              swipeable={false}
+              draggable={false}
+              showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+              autoPlaySpeed={5000}
+              autoPlay={false}
+              // keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              // deviceType={this.props.deviceType}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {select[17].img.map((item) => (
+                <div className={styles.img_wrapper}>
+                  <img
+                    key={item.id}
+                    alt=""
+                    className={styles.news_img}
+                    src={item}
+                  />
+                </div>
+              ))}
+            </Carousel>
+            <h5 className={styles.news_date}>{select[17].date}</h5>
+            <p className={styles.news_text}>{select[17].text}</p>
+          </div>
+        </div>
+      );
+      break;
+
     default:
   }
 
