@@ -1,0 +1,392 @@
+.gallery_wrapper {
+  min-height: 1080px;
+  text-align: center;
+}
+
+.selector {
+  width: 1300px;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.selector_btn {
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: 800;
+  margin: 5px;
+  cursor: pointer;
+  background: rgb(199, 196, 196);
+}
+
+.activeBtn {
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: 800;
+  margin: 5px;
+  cursor: pointer;
+  background: #abe35f;
+  color: rgba(254, 143, 73, 1);
+}
+
+.selector_btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.activeBtn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.gallery_title {
+  text-align: center;
+}
+
+.gallery_wrapper_fotos {
+  width: 1300px;
+  height: min-content;
+  background-color: rgba(256, 256, 256, 0.8);
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+.gallery_fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border: 1px solid black;
+  grid-template-rows: auto;
+  width: 1300px;
+  height: min-content;
+  border: 1px black solid;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+.gallery_item {
+  width: 300px;
+  height: 200px;
+  /* background: gray; */
+  /* border: 1px black solid; */
+  display: block;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery_img {
+  max-width: 300px;
+  max-height: 200px;
+}
+
+.gallery_item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+@media (min-width: 360px) {
+  .gallery_wrapper_fotos {
+    width: 340px;
+    margin-left: 0px;
+  }
+
+  .gallery_fotos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: 340px;
+  }
+
+  .gallery_item {
+    width: 300px;
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .gallery_img {
+    max-width: 300px;
+    max-height: 200px;
+  }
+
+  .selector {
+    width: 340px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .selector_btn {
+    width: 35px;
+    height: 30px;
+    font-size: 0.55em;
+    font-weight: 400;
+    margin: 0px;
+  }
+
+  .activeBtn {
+    width: 35px;
+    height: 30px;
+    font-size: 0.55em;
+    font-weight: 400;
+    margin: 0px;
+  }
+}
+
+@media (min-width: 576px) {
+  .gallery_wrapper_fotos {
+    width: 500px;
+    margin-left: 30px;
+  }
+
+  .gallery_fotos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: 500px;
+  }
+
+  .gallery_item {
+    width: 300px;
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .gallery_img {
+    max-width: 300px;
+    max-height: 200px;
+  }
+
+  .selector {
+    width: 500px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .selector_btn {
+    width: 45px;
+    height: 40px;
+    font-size: 0.9em;
+    font-weight: 400;
+    margin: 5px;
+  }
+
+  .activeBtn {
+    width: 45px;
+    height: 40px;
+    font-size: 0.9em;
+    font-weight: 400;
+    margin: 5px;
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery_wrapper_fotos {
+    width: 700px;
+    margin-left: 20px;
+  }
+
+  .gallery_fotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    width: 700px;
+  }
+
+  .gallery_item {
+    width: 300px;
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .gallery_img {
+    max-width: 300px;
+    max-height: 200px;
+  }
+
+  .selector {
+    width: 700px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .selector_btn {
+    width: 65px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 5px;
+  }
+
+  .activeBtn {
+    width: 65px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 5px;
+  }
+}
+
+@media (min-width: 992px) {
+  .gallery_wrapper_fotos {
+    width: 900px;
+    margin-left: 35px;
+  }
+
+  .gallery_fotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    width: 900px;
+  }
+
+  .gallery_item {
+    width: 300px;
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .gallery_img {
+    max-width: 300px;
+    max-height: 200px;
+  }
+
+  .selector {
+    width: 900px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .selector_btn {
+    width: 80px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 800;
+    margin: 5px;
+  }
+
+  .activeBtn {
+    width: 80px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 800;
+    margin: 5px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery_wrapper_fotos {
+    width: 1100px;
+    margin-left: 40px;
+  }
+
+  .gallery_fotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    width: 1100px;
+  }
+
+  .gallery_item {
+    width: 300px;
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .gallery_img {
+    max-width: 300px;
+    max-height: 200px;
+  }
+
+  .selector {
+    width: 1100px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .selector_btn {
+    width: 100px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 800;
+    margin: 5px;
+  }
+
+  .activeBtn {
+    width: 100px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 800;
+    margin: 5px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .gallery_wrapper_fotos {
+    width: 1300px;
+    margin: 20px auto;
+  }
+
+  .gallery_fotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    width: 1300px;
+  }
+
+  .gallery_item {
+    width: 300px;
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .gallery_img {
+    max-width: 300px;
+    max-height: 200px;
+  }
+
+  .selector {
+    width: 1300px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .selector_btn {
+    width: 120px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 800;
+    margin: 5px;
+  }
+
+  .activeBtn {
+    width: 120px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 800;
+    margin: 5px;
+  }
+}
