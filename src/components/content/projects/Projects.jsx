@@ -1,9 +1,11 @@
 import React from "react";
 import style from "./Projects.module.css";
+import Symbol from "../../header/symbol/Symbol"
 
 export default function Projects() {
   return (
     <div className={style.projects_container}>
+      <Symbol/>
       <h1 className={style.project_title}>
         Проект «Помним, познаём, храним и передаём другим»
       </h1>

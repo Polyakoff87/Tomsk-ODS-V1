@@ -1,46 +1,7 @@
 .symbol {
-  width: 170px;
-  height: 170px;
+  width: 200px;
+  height: 200px;
   background: url(../../../pictures/symbol.png);
   background-size: cover;
-  grid-row: 1/3;
-  grid-column: 1/2;
-  margin-left: 250px;
-}
-
-@media (min-width: 360px) {
-  .symbol {
-    margin-left: 90px;
-  }
-  
-}
-
-@media (min-width: 576px) {
-  .symbol {
-    margin-left: 90px;
-  }
-}
-
-@media (min-width: 768px) {
-  .symbol {
-    margin-left: 90px;
-  }
-}
-
-@media (min-width: 992px) {
-  .symbol {
-    margin-left: 90px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .symbol {
-    margin-left: 90px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .symbol {
-    margin-left: 250px;
-  }
+  margin: 0 auto;
 }
