@@ -698,7 +698,7 @@ export default function CurrentNews() {
       );
       break;
 
-    case "18.04.2024.":
+    case "18.04.2024":
       render = (
         <div className={styles.news_main_wrapper}>
           <div className={styles.item_news_wrapper}>
@@ -740,7 +740,7 @@ export default function CurrentNews() {
       );
       break;
 
-    case "22.04.2024.":
+    case "22.04.2024":
       render = (
         <div className={styles.news_main_wrapper}>
           <div className={styles.item_news_wrapper}>
@@ -782,7 +782,7 @@ export default function CurrentNews() {
       );
       break;
 
-    case "28.04.2024.":
+    case "28.04.2024":
       render = (
         <div className={styles.news_main_wrapper}>
           <div className={styles.item_news_wrapper}>
@@ -819,6 +819,90 @@ export default function CurrentNews() {
             </Carousel>
             <h5 className={styles.news_date}>{select[17].date}</h5>
             <p className={styles.news_text}>{select[17].text}</p>
+          </div>
+        </div>
+      );
+      break;
+    
+      case "10.05.2024":
+      render = (
+        <div className={styles.news_main_wrapper}>
+          <div className={styles.item_news_wrapper}>
+            <Carousel
+              className={styles.carousel}
+              swipeable={false}
+              draggable={false}
+              showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+              autoPlaySpeed={5000}
+              autoPlay={false}
+              // keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              // deviceType={this.props.deviceType}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {select[18].img.map((item) => (
+                <div className={styles.img_wrapper}>
+                  <img
+                    key={item.id}
+                    alt=""
+                    className={styles.news_img}
+                    src={item}
+                  />
+                </div>
+              ))}
+            </Carousel>
+            <h5 className={styles.news_date}>{select[18].date}</h5>
+            <p className={styles.news_text}>{select[18].text}</p>
+          </div>
+        </div>
+      );
+      break;
+      
+      case "10.05.2024.":
+      render = (
+        <div className={styles.news_main_wrapper}>
+          <div className={styles.item_news_wrapper}>
+            <Carousel
+              className={styles.carousel}
+              swipeable={false}
+              draggable={false}
+              showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+              autoPlaySpeed={5000}
+              autoPlay={false}
+              // keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              // deviceType={this.props.deviceType}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {select[19].img.map((item) => (
+                <div className={styles.img_wrapper}>
+                  <img
+                    key={item.id}
+                    alt=""
+                    className={styles.news_img}
+                    src={item}
+                  />
+                </div>
+              ))}
+            </Carousel>
+            <h5 className={styles.news_date}>{select[19].date}</h5>
+            <p className={styles.news_text}>{select[19].text}</p>
           </div>
         </div>
       );
