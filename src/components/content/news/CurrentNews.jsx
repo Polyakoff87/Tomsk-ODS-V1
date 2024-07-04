@@ -155,9 +155,29 @@ export default function CurrentNews() {
     case "28.05.2024":
       res = render(20);
       break;
-    
+
     case "30.05.2024":
       res = render(21);
+      break;
+
+    case "14.06.2024":
+      res = render(22);
+      break;
+
+    case "15.06.2024":
+      res = render(23);
+      break;
+
+    case "23.06.2024":
+      res = render(24);
+      break;
+
+    case "28.06.2024":
+      res = render(25);
+      break;
+
+    case "30.06.2024":
+      res = render(26);
       break;
 
     default:
