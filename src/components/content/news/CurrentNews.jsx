@@ -180,6 +180,14 @@ export default function CurrentNews() {
       res = render(26);
       break;
 
+    case "08.07.2024":
+      res = render(27);
+      break;
+
+    case "19.07.2024":
+      res = render(28);
+      break;
+
     default:
   }
 
