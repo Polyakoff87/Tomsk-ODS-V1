@@ -1,14 +1,22 @@
 .documents_container {
   display: flex;
-  min-height: 1080px;
-  width: 100%;
-  flex-direction: column;
+  flex-direction: row;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  padding: 0 15% 0 15%;
 }
 
-.title {
-  text-align: center;
+.doc {
+  margin: 25px;
 }
 
-.docWrapper {
-  margin: 0 auto;
+@media (min-width: 300px) and (max-width: 768px) {
+  .documents_container {
+    padding: 0px;
+  }
+
+  .doc {
+    margin: 2px;
+  }
 }
+

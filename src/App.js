@@ -16,6 +16,7 @@ import Projects from "./components/content/projects/Projects";
 import CurrentNews from "./components/content/news/CurrentNews";
 
 
+
 export default function App() {
   return (
     <Routes>
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/ads" element={<Ads />} />
         <Route path="/reviews" element={<Reviews />} />
+        
       </Route>
     </Routes>
   );

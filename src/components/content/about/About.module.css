@@ -1,72 +1,33 @@
 .about_container {
-  min-height: 1080px;
+  height: 100vh;
   max-width: 1200px;
   margin: 50px auto;
-  background-color: rgba(256, 256, 256, 0.8);
-  font-size: 120%;
+  background-color: rgba(41, 53, 21, 0.8);
+  font-size: 1.0em;
   border: 1px solid black;
+  padding-bottom: 50px;
+  color: white;
+  border-radius: 10px;
 }
 
 .about_container div {
-  font-size: 120%;
+  font-size: 1.0em;
 }
 
-@media (min-width: 360px) {
-  .about_container {
-    max-width: 340px;
-    font-size: 90%;
-  }
-  .about_container div {
-    font-size: 90%;
-  }
+h1 {
+  font-size: 1.5em;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 300px) and (max-width: 768px) {
   .about_container {
-    max-width: 556px;
-    font-size: 90%;
+    height: 100vh;
+    margin: 10px auto;
+    font-size: 0.9em;
+    padding-bottom: 20px;
   }
-  .about_container div {
-    font-size: 90%;
+
+  h1 {
+    font-size: 1.1em;
   }
 }
 
-@media (min-width: 768px) {
-  .about_container {
-    max-width: 748px;
-    font-size: 100%;
-  }
-  .about_container div {
-    font-size: 100%;
-  }
-}
-
-@media (min-width: 992px) {
-  .about_container {
-    max-width: 972px;
-    font-size: 110%;
-  }
-  .about_container div {
-    font-size: 110%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .about_container {
-    max-width: 1180px;
-    font-size: 120%;
-  }
-  .about_container div {
-    font-size: 120%;
-  }
-}
-
-@media (min-width: 1400px) {
-  .about_container {
-    max-width: 1200px;
-    font-size: 120%;
-  }
-  .about_container div {
-    font-size: 120%;
-  }
-}

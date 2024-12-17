@@ -1,18 +1,17 @@
 import React from "react";
-import style from './Ads.module.css'
+import style from "./Ads.module.css";
 import { useSelector } from "react-redux";
 
 export default function Ads() {
-  const select = useSelector((state) => state.adsSlider)
+  const select = useSelector((state) => state.adsSlider);
 
   return (
     <div className={style.ads_container}>
-      
       <div className={style.ads_wrapper}>
-      {select.map(el => {
-        return <AdsItem key={el.id} el={el} />;
-      })}
-        </div>
+        {select.map((el) => {
+          return <AdsItem key={el.id} el={el} />;
+        })}
+      </div>
     </div>
   );
 }

@@ -1,211 +1,63 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./CurrentNews.module.css";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1400 },
-    items: 1,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1200, min: 992 },
-    items: 1,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  mobile: {
-    breakpoint: { max: 768, min: 576 },
-    items: 1,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-};
+import { Image } from "antd";
+import { useGetCurrentNewsQuery } from "../../../api/rtkApi";
 
 export default function CurrentNews() {
   const { link } = useParams();
-  const select = useSelector((state) => state.newsSlider);
+  const currentLink = link;
+  const [query, setQuery] = useState(`${currentLink && `date=${currentLink}`}`);
 
-  let render = function (i) {
-    return (
-      <div className={styles.news_main_wrapper}>
-        <div className={styles.item_news_wrapper}>
-          <Carousel
-            className={styles.carousel}
-            swipeable={false}
-            draggable={false}
-            showDots={true}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            // autoPlay={this.props.deviceType !== "mobile" ? true : false}
-            autoPlaySpeed={5000}
-            autoPlay={false}
-            // keyBoardControl={true}
-            customTransition="all .5"
-            transitionDuration={500}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-            // deviceType={this.props.deviceType}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
-          >
-            {select[i].img.map((item) => (
-              <div className={styles.img_wrapper}>
-                <img
-                  key={item.id}
-                  alt=""
-                  className={styles.news_img}
-                  src={item}
-                />
-              </div>
-            ))}
-          </Carousel>
-          <h5 className={styles.news_date}>{select[i].date}</h5>
-          <p className={styles.news_text}>{select[i].text}</p>
-        </div>
-      </div>
-    );
+  const { data } = useGetCurrentNewsQuery(query);
+  let currentData;
+  useEffect(() => {
+    setQuery(`${currentLink && `date=${currentLink}`}`);
+  }, [currentLink]);
+  currentData = data ? data[0] : undefined;
+
+  console.log(currentData);
+
+  const item_news_wrapper = {
+    height: "max-content",
+    background: "rgba(41, 53, 21, 0.8)",
+    margin: "20px 40px",
+    border: "1px solid black",
+    color: "white",
+    borderRadius: "10px"
   };
 
-  let res;
+  const img_wrapper = {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    padding: "20px",
+  };
 
-  switch (link) {
-    case "19.01.2024":
-      res = render(0);
-      break;
+  const img = {
+    margin: "10px",
+  };
 
-    case "24.01.2024":
-      res = render(1);
-      break;
-
-    case "03.02.2024":
-      res = render(2);
-      break;
-
-    case "16.02.2024":
-      res = render(3);
-      break;
-
-    case "29.02.2024":
-      res = render(4);
-      break;
-
-    case "02.03.2024":
-      res = render(5);
-      break;
-
-    case "02.03.2024.":
-      res = render(6);
-      break;
-
-    case "05.03.2024":
-      res = render(7);
-      break;
-
-    case "25.03.2024":
-      res = render(8);
-      break;
-
-    case "30.03.2024":
-      res = render(9);
-      break;
-
-    case "13.04.2024":
-      res = render(10);
-      break;
-
-    case "14.04.2024":
-      res = render(11);
-      break;
-
-    case "15.04.2024":
-      res = render(12);
-      break;
-
-    case "17.04.2024":
-      res = render(13);
-      break;
-
-    case "17.04.2024.":
-      res = render(14);
-      break;
-
-    case "18.04.2024":
-      res = render(15);
-      break;
-
-    case "22.04.2024":
-      res = render(16);
-      break;
-
-    case "28.04.2024":
-      res = render(17);
-      break;
-
-    case "10.05.2024":
-      res = render(18);
-      break;
-
-    case "10.05.2024.":
-      res = render(19);
-      break;
-
-    case "28.05.2024":
-      res = render(20);
-      break;
-
-    case "30.05.2024":
-      res = render(21);
-      break;
-
-    case "14.06.2024":
-      res = render(22);
-      break;
-
-    case "15.06.2024":
-      res = render(23);
-      break;
-
-    case "23.06.2024":
-      res = render(24);
-      break;
-
-    case "28.06.2024":
-      res = render(25);
-      break;
-
-    case "30.06.2024":
-      res = render(26);
-      break;
-
-    case "08.07.2024":
-      res = render(27);
-      break;
-
-    case "19.07.2024":
-      res = render(28);
-      break;
-
-    case "02.08.2024":
-      res = render(29);
-      break;
-
-    case "29.08.2024":
-      res = render(30);
-      break;
-
-    case "03.09.2024":
-      res = render(31);
-      break;
-
-    case "12.09.2024":
-      res = render(32);
-      break;
-
-    default:
-  }
-
-  return <>{res}</>;
+  return (
+    <div className={styles.news_main_wrapper}>
+      <div style={item_news_wrapper}>
+        <div style={img_wrapper}>
+          {currentData?.img.map((item) => (
+            <div style={img}>
+              <Image
+                key={item.id}
+                alt=""
+                src={item}
+                // width={300}
+                height={200}
+              />
+            </div>
+          ))}
+        </div>
+        <h5 className={styles.news_date}>{currentData?.date}</h5>
+        <p className={styles.news_text}>{currentData?.text}</p>
+      </div>
+    </div>
+  );
 }

@@ -6,7 +6,7 @@ export const navSlice = createSlice({
     { id: 0, name: "Главная", to: "/" },
     { id: 1, name: "Новости", to: "/news" },
     { id: 2, name: "О нас", to: "/about" },
-    { id: 3, name: "Устав", to: "/documents" },
+    { id: 3, name: "Документы", to: "/documents" },
     { id: 4, name: "Программа", to: "/program" },
     { id: 5, name: "Наши проекты", to: "/projects" },
     { id: 6, name: "Галерея", to: "/gallery" },

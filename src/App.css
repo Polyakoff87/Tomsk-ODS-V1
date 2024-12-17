@@ -1,76 +1,24 @@
 .App {
   margin: 0;
   padding: 0;
-  position: relative;
-  display: grid;
-  grid-template-rows: 200px 50px max-content 150px;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   list-style: none;
-  text-decoration: none;
   font-family: sans-serif;
-  background: url('../src/pictures/fon.jpg');
-  background-attachment: fixed; 
+  background: url("../src/pictures/fon.jpg");
+  background-attachment: fixed;
+  width: 100%;
   margin: 0 auto;
 }
 
 .content {
-  grid-row: 3/4;
-  grid-column: 1;
+  display: flex;
+  height: max-content;
+  width: 100%;
+  position: relative;
 }
 
 .active {
   color: rgba(254, 143, 73, 1) !important;
-}
-
-@media (min-width: 360px){
-  .App {
-    max-width: 340px;
-    grid-template-rows: 200px 100px max-content 100px;
-    background-attachment: fixed; 
-  }
- 
-}
-
-@media (min-width: 576px){
-  .App {
-    max-width: 556px;
-    grid-template-rows: 200px 50px max-content 150px;
-    background-attachment: fixed; 
-  }
-  
-}
-
-@media (min-width: 768px) {
-  .App {
-    max-width: 748px;
-    grid-template-rows: 200px 50px max-content 150px;
-    background-attachment: fixed; 
-  }
- 
-}
-
-@media (min-width: 992px) {
-  .App {
-    max-width: 972px;
-    grid-template-rows: 200px 50px max-content 150px;
-    background-attachment: fixed; 
-  }
-  
-}
-
-@media (min-width: 1200px) {
-  .App {
-    max-width: 1180px;
-    grid-template-rows: 200px 50px max-content 150px;
-    background-attachment: fixed; 
-  }
- 
-}
-@media (min-width: 1400px) {
-  .App {
-    max-width: 100%;
-    grid-template-rows: 200px 50px max-content 150px;
-    background-attachment: fixed; 
-  }
-  
 }

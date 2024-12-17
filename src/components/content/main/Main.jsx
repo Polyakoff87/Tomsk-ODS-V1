@@ -1,115 +1,89 @@
 import styles from "./Main.module.css";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useState, useEffect} from "react";
-
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1400 },
-    items: 5,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1200, min: 992 },
-    items: 3,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  mobile: {
-    breakpoint: { max: 768, min: 576 },
-    items: 2,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-};
+import { Carousel, ConfigProvider, Image } from "antd";
+import { useGetNewsQuery } from "../../../api/rtkApi";
 
 export default function Main() {
-  const select = useSelector((state) => state.newsSlider);
-  const [current, setCurrent] = useState({
-    windowWidth: window.innerWidth,
-  });
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrent( window.innerWidth );
-    }, 100)
-    return () => clearInterval(intervalId);
-  }, []);
-  
+  const { data } = useGetNewsQuery();
+
+
+  const item = {
+    background: "rgba(256, 256, 256, 0.8)",
+    margin: "20px 40px",
+  };
+
+  const link = {
+    color: "white",
+  };
+
+  const img_wrapper = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
+  const news_text = {
+    margin: "15px",
+    textAlign: "justify",
+    textIndent: "15px",
+    fontSize: "1.0em",
+  };
+
+  const date = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: "20px",
+  };
   return (
-    <div className={styles.main_wrapper}>
-      <h2 className={styles.news_title}>Наши Новости</h2>
-      {current < 400 ? (
-        <li>
-          {select.map((el) => {
-            return (
-              <div key={el.id} className={styles.item}>
-                <Link className={styles.link} to={`/news/${el.date}`}>
-                  <div className={styles.img_wrapper}>
-                    <img alt="" className={styles.news_img} src={el.url}></img>
+    <ConfigProvider
+      theme={{
+        components: {
+          Carousel: {
+            arrowSize: 40,
+            dotHeight: 10,
+            dotOffset: -15,
+          },
+          Image: {},
+        },
+      }}
+    >
+      <div className={styles.main_wrapper}>
+        <h2 className={styles.news_title}>Наши Новости</h2>
+        <div className={styles.carouselWrapper}>
+        <Carousel draggable arrows adaptiveHeight autoplay autoplaySpeed={10000}>
+          {data?.map((el) => {
+              return (
+                <div key={el.id} style={item}>
+                  <div style={img_wrapper}>
+                    <Image
+                      alt=""
+                      src={el.url}
+                      height={600}
+                    ></Image>
                   </div>
-                  <h5>{el.date}</h5>
-                  <p className={styles.news_text}>{el.text}</p>
-                </Link>
-              </div>
-            );
-          })}
-        </li>
-      ) : (
-        <Carousel
-          className={styles.carousel}
-          swipeable={false}
-          draggable={false}
-          showDots={true}
-          responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
-          infinite={true}
-          // autoPlay={this.props.deviceType !== "mobile" ? true : false}
-          autoPlaySpeed={5000}
-          autoPlay={true}
-          // keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          // deviceType={this.props.deviceType}
-          dotListClass="custom-dot-list-style"
-          // itemClass="carousel-item-padding-40-px"
-        >
-          {select.map((el) => {
-            return (
-              <div key={el.id} className={styles.item}>
-                <Link className={styles.link} to={`/news/${el.date}`}>
-                  <div className={styles.img_wrapper}>
-                    <img alt="" className={styles.news_img} src={el.url}></img>
-                  </div>
-                  <h5>{el.date}</h5>
-                  <p className={styles.news_text}>{el.text}</p>
-                </Link>
-              </div>
-            );
-          }).reverse()}
+                  <h5 style={date}>{el.date}</h5>
+                  <Link style={link} to={`/news/${el.date}`}>
+                    <p style={news_text}>{el.text}</p>
+                  </Link>
+                </div>
+              );
+            })
+            .reverse()}
         </Carousel>
-      )}
+        </div>
 
-      <h2 className={styles.map_title}>Мы на карте</h2>
-      <div className={styles.map}>
-        {current < 992 ? (
+        <h2 className={styles.map_title}>Мы на карте</h2>
+        <div className={styles.mapWrapper}>
           <iframe
             title="This is a unique title"
             src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac37889cc469538877b1390e0011720c1867570159c92c8aeecb0848cb3f7496b&amp;source=constructor"
-            width="300"
-            height="300"
+            width="1000"
+            height="600"
           ></iframe>
-        ) : (
-          <iframe
-            title="This is a unique title"
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac37889cc469538877b1390e0011720c1867570159c92c8aeecb0848cb3f7496b&amp;source=constructor"
-            width="900"
-            height="720"
-          ></iframe>
-        )}
+        </div>
       </div>
-    </div>
+    </ConfigProvider>
   );
 }

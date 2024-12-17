@@ -3,9 +3,11 @@
   text-align: center;
   max-width: 1200px;
   margin: 50px auto;
-  background-color: rgba(256, 256, 256, 0.8);
+  background-color: rgba(41, 53, 21, 0.8);
   font-size: 130%;
   border: 1px solid black;
+  color: white;
+  border-radius: 10px;
 }
 
 table {
