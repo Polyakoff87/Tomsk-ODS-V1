@@ -16,7 +16,6 @@ export default function CurrentNews() {
   }, [currentLink]);
   currentData = data ? data[0] : undefined;
 
-  console.log(currentData);
 
   const item_news_wrapper = {
     height: "max-content",

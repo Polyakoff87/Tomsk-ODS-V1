@@ -36,6 +36,7 @@ export default function Main() {
     alignItems: "center",
     fontSize: "20px",
   };
+
   return (
     <ConfigProvider
       theme={{
@@ -63,6 +64,8 @@ export default function Main() {
                       height={600}
                     ></Image>
                   </div>
+
+                  
                   <h5 style={date}>{el.date}</h5>
                   <Link style={link} to={`/news/${el.date}`}>
                     <p style={news_text}>{el.text}</p>
