@@ -14,7 +14,7 @@
 
 .ads_item {
   border: 1px solid black;
-  background: #f9f9f9;
+  background: rgba(41, 53, 21, 0.8);
   text-align: center;
   text-indent: 10px;
   line-height: 25px;

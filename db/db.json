@@ -1,4 +1,7 @@
 {
+  "reviews": [
+   
+  ],
   "news": [
     {
       "id": "1",
@@ -543,7 +546,6 @@
       ]
     }
   ],
-
   "fotos": [
     {
       "id": "1",
@@ -645,7 +647,6 @@
       "year": "2016",
       "url": "pictures/gallery2016/OLYMPUS DIGITAL CAMERA_112.jpg"
     },
-
     {
       "id": "1",
       "year": "2017",
@@ -796,7 +797,6 @@
       "year": "2017",
       "url": "pictures/gallery2017/f0929664.jpg"
     },
-
     {
       "id": "1",
       "year": "2018",
@@ -962,7 +962,6 @@
       "year": "2018",
       "url": "pictures/gallery2018/[001254].jpg"
     },
-
     {
       "id": "1",
       "year": "2019",
@@ -1148,7 +1147,6 @@
       "year": "2019",
       "url": "pictures/gallery2019/IMG-20240306-WA0016.jpg"
     },
-
     {
       "id": "1",
       "year": "2020",
@@ -1299,7 +1297,6 @@
       "year": "2020",
       "url": "pictures/gallery2020/20200722_192802.jpg"
     },
-
     {
       "id": "1",
       "year": "2021",
@@ -1465,7 +1462,6 @@
       "year": "2021",
       "url": "pictures/gallery2021/IMG-20211123-WA0016.jpg"
     },
-
     {
       "id": "1",
       "year": "2022",
@@ -1926,7 +1922,6 @@
       "year": "2022",
       "url": "pictures/gallery2022/IMG-20221017-WA0032.jpg"
     },
-
     {
       "id": "1",
       "year": "2023",
@@ -2372,7 +2367,6 @@
       "year": "2023",
       "url": "pictures/gallery2023/IMG-20231215-WA0018.jpg"
     },
-
     {
       "id": "1",
       "year": "2024",

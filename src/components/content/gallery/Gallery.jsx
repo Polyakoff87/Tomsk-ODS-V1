@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import styles from "./Gallery.module.css";
 import { Image, Pagination, ConfigProvider } from "antd";
 import { useGetFotosQuery } from "../../../api/rtkApi";
@@ -9,16 +9,19 @@ export default function Gallery() {
   const [currentPage, setCurrentPage] = useState("1");
   const itemsPerPage = "10";
 
+
+
   const [query, setQuery] = useState(
     `fotos?${currentPage && `_page=${currentPage}`}&${
       itemsPerPage && `_per_page=${itemsPerPage}`
     }&${year && `year=${year}`}`
   );
 
-  const { fotos, totalItems } = useGetFotosQuery(query, {
-    selectFromResult: ({ data }) => ({
+  const { fotos, totalItems} = useGetFotosQuery(query,  {
+    selectFromResult: ({ data, isLoading, isFetching}) => ({
       fotos: data?.fotos,
       totalItems: data?.totalItems,
+   
     }),
   });
 

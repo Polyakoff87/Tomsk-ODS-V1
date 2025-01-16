@@ -14,8 +14,7 @@ import Ads from "./components/content/ads/Ads";
 import Main from "./components/content/main/Main";
 import Projects from "./components/content/projects/Projects";
 import CurrentNews from "./components/content/news/CurrentNews";
-
-
+import AddReview from "./components/content/reviews/AddReview";
 
 export default function App() {
   return (
@@ -31,7 +30,7 @@ export default function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/ads" element={<Ads />} />
         <Route path="/reviews" element={<Reviews />} />
-        
+        <Route path="/addReview" element={<AddReview />} />
       </Route>
     </Routes>
   );

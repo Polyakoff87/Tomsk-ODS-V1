@@ -1,11 +1,35 @@
 .wrapper {
  display: flex;
- flex-direction: row;
+ flex-direction: column;
+ flex-wrap: wrap;
+ width: 100%;
  height: 100vh;
  padding: 0 15%;
 }
 
 .item {
   height: max-content;
-  margin: 10px;
+  margin: 16px;
+}
+
+.reviews_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: max-content;
+  /* margin: 0 auto; */
+  overflow-y: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.add_btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: 800;
+  margin: 5px;
+  cursor: pointer;
+  background: rgba(41, 53, 21, 0.8);
+  color: white;
 }
