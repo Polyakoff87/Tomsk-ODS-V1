@@ -1,1 +1,2 @@
-Стек: React, RTK query, Json-server, Ant design.
+Мой первый рабочий проект сделанный на заказ. Представленная версия работает на Json-server. Рабочая версия размещена по адресу https://tomskods.ru и не привязана к серверу, но такой задачи заказчиками и не ставилось. 
+Стек: React, RTK query, Json-server, Ant design. Для запуска npm run dev.
