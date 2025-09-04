@@ -22,7 +22,7 @@ export default function App() {
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Main />} />
         <Route path="/news" element={<News />} />
-        <Route path="/news/:link" element={<CurrentNews />} />
+        <Route path="/news/:date" element={<CurrentNews />} />
         <Route path="/about" element={<About />} />
         <Route path="/documents" element={<Documents />} />
         <Route path="/program" element={<Program />} />

@@ -13,7 +13,7 @@ export default function News() {
     background: "rgba(41, 53, 21, 0.8)",
     margin: "20px 40px",
     border: "1px solid black",
-    borderRadius: "10px"
+    borderRadius: "10px",
   };
 
   const img_wrapper = {
@@ -45,17 +45,16 @@ export default function News() {
 
   return (
     <div className={styles.news_main_wrapper}>
-      {data
-        ?.map((el) => {
+      {[...(data ?? [])]
+        .map((el) => {
           return (
-            <div style={item_news_wrapper}>
+            <div key={el.id} style={item_news_wrapper}>
               <div style={img_wrapper}>
-                {el.img.map((item) => {
+                {el.img?.map((item, idx) => {
                   return (
-                    <div style={img}>
+                    <div style={img} key={idx}>
                       <Image
-                        key={el.id}
-                        alt=""
+                        alt={`Новость ${el.id} фото`}
                         height={200}
                         src={item}
                       />

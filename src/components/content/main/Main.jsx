@@ -4,12 +4,10 @@ import { Carousel, ConfigProvider, Image } from "antd";
 import { useGetNewsQuery } from "../../../api/rtkApi";
 
 export default function Main() {
-
   const { data } = useGetNewsQuery();
 
-
   const item = {
-    background: "rgba(256, 256, 256, 0.8)",
+    background: "rgba(255, 255, 255, 0.8)",
     margin: "20px 40px",
   };
 
@@ -53,28 +51,28 @@ export default function Main() {
       <div className={styles.main_wrapper}>
         <h2 className={styles.news_title}>Наши Новости</h2>
         <div className={styles.carouselWrapper}>
-        <Carousel draggable arrows adaptiveHeight autoplay autoplaySpeed={10000}>
-          {data?.map((el) => {
+          <Carousel
+            draggable
+            arrows
+            adaptiveHeight
+            autoplay
+            autoplaySpeed={10000}
+          >
+            {[...(data ?? [])].reverse().map((el) => {
               return (
                 <div key={el.id} style={item}>
                   <div style={img_wrapper}>
-                    <Image
-                      alt=""
-                      src={el.url}
-                      height={600}
-                    ></Image>
+                    <Image alt="" src={el.url} height={600}></Image>
                   </div>
 
-                  
                   <h5 style={date}>{el.date}</h5>
                   <Link style={link} to={`/news/${el.date}`}>
                     <p style={news_text}>{el.text}</p>
                   </Link>
                 </div>
               );
-            })
-            .reverse()}
-        </Carousel>
+            })}
+          </Carousel>
         </div>
 
         <h2 className={styles.map_title}>Мы на карте</h2>

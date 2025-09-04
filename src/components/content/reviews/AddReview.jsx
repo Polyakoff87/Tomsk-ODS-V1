@@ -15,7 +15,6 @@ export default function AddReview() {
   function saveReview() {
     newReview({id: uuidv4(), author: name, text: text});
     navigate('/reviews');
-    console.log('ooops')
   }
 
   return (

@@ -5,8 +5,8 @@ import { Image } from "antd";
 import { useGetCurrentNewsQuery } from "../../../api/rtkApi";
 
 export default function CurrentNews() {
-  const { link } = useParams();
-  const currentLink = link;
+  const { date } = useParams();
+  const currentLink = date;
   const [query, setQuery] = useState(`${currentLink && `date=${currentLink}`}`);
 
   const { data } = useGetCurrentNewsQuery(query);
@@ -16,14 +16,13 @@ export default function CurrentNews() {
   }, [currentLink]);
   currentData = data ? data[0] : undefined;
 
-
   const item_news_wrapper = {
     height: "max-content",
     background: "rgba(41, 53, 21, 0.8)",
     margin: "20px 40px",
     border: "1px solid black",
     color: "white",
-    borderRadius: "10px"
+    borderRadius: "10px",
   };
 
   const img_wrapper = {
@@ -42,13 +41,11 @@ export default function CurrentNews() {
     <div className={styles.news_main_wrapper}>
       <div style={item_news_wrapper}>
         <div style={img_wrapper}>
-          {currentData?.img.map((item) => (
-            <div style={img}>
+          {currentData?.img.map((item, idx) => (
+            <div key={idx} style={img}>
               <Image
-                key={item.id}
-                alt=""
+                alt={`Новость ${currentData?.id} фото`}
                 src={item}
-                // width={300}
                 height={200}
               />
             </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Gallery.module.css";
 import { Image, Pagination, ConfigProvider } from "antd";
 import { useGetFotosQuery } from "../../../api/rtkApi";
@@ -6,10 +6,8 @@ import { useGetFotosQuery } from "../../../api/rtkApi";
 export default function Gallery() {
   const [isActive, setIsActive] = useState(2016);
   const [year, setYear] = useState("2016");
-  const [currentPage, setCurrentPage] = useState("1");
-  const itemsPerPage = "10";
-
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   const [query, setQuery] = useState(
     `fotos?${currentPage && `_page=${currentPage}`}&${
@@ -17,11 +15,10 @@ export default function Gallery() {
     }&${year && `year=${year}`}`
   );
 
-  const { fotos, totalItems} = useGetFotosQuery(query,  {
-    selectFromResult: ({ data, isLoading, isFetching}) => ({
+  const { fotos, totalItems } = useGetFotosQuery(query, {
+    selectFromResult: ({ data, isLoading, isFetching }) => ({
       fotos: data?.fotos,
       totalItems: data?.totalItems,
-   
     }),
   });
 
@@ -40,8 +37,8 @@ export default function Gallery() {
   };
 
   function toggle(e) {
-    setIsActive(e.target.innerHTML);
-    setYear(e.target.innerHTML);
+    setIsActive(e.target.textContent);
+    setYear(e.target.textContent);
     setCurrentPage("1");
   }
 
@@ -52,25 +49,27 @@ export default function Gallery() {
           Pagination: {
             itemBg: "rgba(41, 53, 21, 0.8)",
             itemSize: 45,
-            margin: "10px"
+            margin: "10px",
           },
         },
       }}
     >
       <div className={styles.gallery_wrapper}>
         <h1 className={styles.gallery_title}>Галерея</h1>
-        <div className={styles.paginationWrapper }><Pagination
-          defaultCurrent={currentPage}
-          current={currentPage}
-          total={totalItems}
-          showTotal={showTotal}
-          onChange={onChange}
-          responsive={true}
-          align={"center"}
-          showSizeChanger={false}
-          pageSize={itemsPerPage}
-        /></div>
-        
+        <div className={styles.paginationWrapper}>
+          <Pagination
+            defaultCurrent={currentPage}
+            current={currentPage}
+            total={totalItems}
+            showTotal={showTotal}
+            onChange={onChange}
+            responsive={true}
+            align={"center"}
+            showSizeChanger={false}
+            pageSize={itemsPerPage}
+          />
+        </div>
+
         <div className={styles.selector}>
           <Button text={"2016"} toggle={toggle} isActive={isActive} />
           <Button text={"2017"} toggle={toggle} isActive={isActive} />
@@ -82,7 +81,7 @@ export default function Gallery() {
           <Button text={"2023"} toggle={toggle} isActive={isActive} />
           <Button text={"2024"} toggle={toggle} isActive={isActive} />
         </div>
-        
+
         <div className={styles.gallery_wrapper_fotos}>
           <div className={styles.gallery_fotos}>
             {fotos?.map((item) => (
@@ -90,7 +89,7 @@ export default function Gallery() {
                 <Image
                   key={item.id}
                   src={item.url}
-                  alt=""
+                  alt={`Фото ${item.id}`}
                   // width={200}
                   height={200}
                 />

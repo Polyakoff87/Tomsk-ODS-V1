@@ -22,11 +22,15 @@ export default function Footer() {
   };
 
   return (
-    <div style={styles.container}><p className={style.p}> ТРОО "Общество доступная среда".</p>
-     
+    <div style={styles.container}>
+      <p className={style.p}> ТРОО "Общество доступная среда".</p>
       <p className={style.p}>634045 г. Томск, ул. Нахимова, 13/Б, кв. 22</p>
-      <div><p className={style.p}>tomskods@mail.ru</p></div>
-      <div><p className={style.p}>Тел. + 7 913 801 72 53</p></div>
+      <div>
+        <p className={style.p}>tomskods@mail.ru</p>
+      </div>
+      <div>
+        <p className={style.p}>Тел. + 7 913 801 72 53</p>
+      </div>
       <div>
         <div>
           <a

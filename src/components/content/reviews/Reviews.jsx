@@ -1,24 +1,33 @@
 import React, { useState } from "react";
-import {useNavigate} from 'react-router';
+import { useNavigate } from "react-router";
 import styles from "./Reviews.module.css";
-import { Card } from "antd";
-import { useGetReviewsQuery } from "../../../api/rtkApi";
+import { Card, Button } from "antd";
+import {
+  useGetReviewsQuery,
+  useDeleteReviewMutation,
+} from "../../../api/rtkApi";
 
 export default function Reviews() {
-  const { data } = useGetReviewsQuery();
+  const { data: reviews, refetch } = useGetReviewsQuery();
 
-  let navigate = useNavigate()
+  const [deleteReview] = useDeleteReviewMutation();
+
+  let navigate = useNavigate();
+
   function addReview() {
-    navigate('/addReview')
+    navigate("/addReview");
   }
 
-
+  const handleDeleteReview = async (id) => {
+    await deleteReview(id);
+    refetch(); // Refetch reviews after deletion
+  };
 
   return (
     <div className={styles.wrapper}>
-      <Button addReview={addReview}></Button>
+      <AddButton addReview={addReview}></AddButton>
       <div className={styles.reviews_wrapper}>
-        {data?.map((el) => {
+        {reviews?.map((el) => {
           return (
             <div key={el.id} className={styles.item}>
               <Card
@@ -26,11 +35,12 @@ export default function Reviews() {
                 bordered={false}
                 style={{
                   width: 300,
-                  background: "rgba(41, 53, 21, 0.8)"
+                  background: "rgba(41, 53, 21, 0.8)",
                 }}
               >
                 <div>{el.text}</div>
               </Card>
+              <Button danger type="primary" onClick={() => handleDeleteReview(el.id)}>Удалить отзыв</Button>
             </div>
           );
         })}
@@ -39,12 +49,9 @@ export default function Reviews() {
   );
 }
 
-function Button({addReview}) {
+function AddButton({ addReview }) {
   return (
-    <button
-      onClick={(e) => addReview(e)}
-      className={styles.add_btn}
-    >
+    <button onClick={(e) => addReview(e)} className={styles.add_btn}>
       Добавить отзыв
     </button>
   );

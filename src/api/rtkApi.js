@@ -5,7 +5,7 @@ export const rtkApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:3001",
   }),
-  tagTypes: ['reviews'],
+  tagTypes: ["reviews"],
 
   endpoints: (builder) => ({
     getFotos: builder.query({
@@ -27,24 +27,33 @@ export const rtkApi = createApi({
 
     getReviews: builder.query({
       query: (query) => `reviews?&${query}`,
-      providesTags: ['reviews']
+      providesTags: ["reviews"],
     }),
 
-    
+    addReview: builder.mutation({
+      query: (body) => ({
+        method: "POST",
+        url: "http://localhost:3001/reviews/",
+        body,
+      }),
+      invalidatesTags: ["reviews"],
+    }),
 
-    addReview:builder.mutation(
-      {
-        query: body => (
-          {
-            method: 'POST',
-            url: "http://localhost:3001/reviews/",
-            body
-          }
-        ),
-        invalidatesTags: ['reviews']
-      }
-    )
+    deleteReview: builder.mutation({
+      query: (id) => ({
+        method: "DELETE",
+        url: `http://localhost:3001/reviews/${id}`,
+      }),
+      invalidatesTags: ["reviews"],
+    }),
   }),
 });
 
-export const { useGetFotosQuery, useGetNewsQuery, useGetCurrentNewsQuery, useGetReviewsQuery, useAddReviewMutation } = rtkApi;
+export const {
+  useGetFotosQuery,
+  useGetCurrentNewsQuery,
+  useGetReviewsQuery,
+  useAddReviewMutation,
+  useDeleteReviewMutation,
+  useGetNewsQuery,
+} = rtkApi;
